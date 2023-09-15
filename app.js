@@ -26,8 +26,8 @@ app.use('/products', products);
 app.use('/updateProd', updateProd); 
 app.use('/deleteAProduct', deleteAProduct);
 app.use('/comprarProducto', comprarProducto); 
-
 app.use('/getUserInfo', getUserInfo); 
+
 app.use('/readToken', jwtSender);
 
 

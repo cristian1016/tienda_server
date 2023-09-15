@@ -29,7 +29,7 @@ const register = (req, res) => {
 
 // Obtiene y devuelve la información del perfil de un usuario
 const verPerfilUsuario = (req, res) => {
-  const userId = req.query.id;
+  const userId = req.query.id_user;
 
   userRepository.obtenerInformacionUsuario(userId, handleResponse(res, "Usuario no encontrado"), (error, usuario) => {
     if (usuario) {
