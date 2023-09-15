@@ -24,10 +24,10 @@ app.use('/auth', auth);
 app.use('/addProduct', addProduct);
 app.use('/products', products);
 app.use('/updateProd', updateProd); 
-
-app.use('/comprarProducto', comprarProducto); 
-app.use('/getUserInfo', getUserInfo); 
 app.use('/deleteAProduct', deleteAProduct);
+app.use('/comprarProducto', comprarProducto); 
+
+app.use('/getUserInfo', getUserInfo); 
 app.use('/readToken', jwtSender);
 
 

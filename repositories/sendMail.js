@@ -38,7 +38,7 @@ const enviarCorreo = (user_id) => {
       // Configura las opciones para el correo electrónico
       const opcionesCorreo = {
         from: 'mercadocampesinocol@gmail.com',
-        to: email, 
+        to: email_user, 
         subject: 'Ensayo cliente correo',
         html: '<img src="https://i.pinimg.com/564x/d7/10/05/d71005b11f7c25a5b1ccc85a323f9080.jpg">'
       };
