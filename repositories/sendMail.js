@@ -5,14 +5,14 @@ const mysql = require('mysql2');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'tu_correo@gmail.com', // Tu dirección de correo electrónico de Gmail
-    pass: 'tu_contraseña', // Tu contraseña de Gmail
+    user: 'mercadocampesinocol@gmail.com',
+    pass: 'hikfobmxmxvndchn!',
   },
 });
 
 // Configuración de la conexión a la base de datos MySQL
 const db = mysql.createConnection({
-  host: 'localhost', // Cambia esto a la dirección de tu servidor MySQL si es necesario
+  host: 'localhost',
   user: 'root',
   password: 'Sena1234',
   database: 'conexionTienda',
@@ -44,10 +44,10 @@ const enviarCorreo = (user_id) => {
 
       // Configura las opciones para el correo electrónico
       const opcionesCorreo = {
-        from: 'tu_correo@gmail.com',
+        from: 'mercadocampesinocol@gmail.com',
         to: email_user,
         subject: 'Asunto del correo',
-        html: '<p>Contenido del correo electrónico</p>',
+        html: '<p>Gracias por tu compra</p>',
       };
 
       // Envía el correo electrónico utilizando el transportador
