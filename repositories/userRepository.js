@@ -8,9 +8,8 @@ const db = mysql.createConnection({
   password: "Sena1234",
   database: "conexionTienda",
 });
-
-// Establece la conexión a la base de datos
 db.connect();
+
 
 class UserRepository {
   // Método para agregar un nuevo usuario a la base de datos

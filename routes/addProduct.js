@@ -7,8 +7,7 @@ const router = express.Router();
 router.post('/', productController.addProduct);
 
 
-//productController.addProduct: Se utiliza el método addProduct del controlador 
-//de productos productController para manejar la lógica de agregar un producto.
+//productController.addProduct: para manejar la lógica de agregar un producto.
 
 
 module.exports = router; 
