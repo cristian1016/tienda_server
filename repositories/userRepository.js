@@ -54,20 +54,20 @@ class UserRepository {
     });
   }
 
-  // Método para obtener la información de un usuario por su ID
+  //Método para obtener la información de un usuario por su ID
   static obtenerInformacionUsuario(user_id, callback) {
-    // Consulta SQL para seleccionar un usuario por su ID
+
     const query = 'SELECT * FROM users WHERE id_user = ?';
     db.query(query, [user_id], (err, result) => {
       if (err) {
-        // Maneja errores al obtener la información del usuario
+        //Maneja errores al obtener la información del usuario
         console.error('Error al obtener la información del usuario: ' + err.message);
         callback(err, null);
       } else if (result.length === 0) {
-        // Si no se encuentra ningún usuario con el ID especificado
+        //Si no se encuentra ningún usuario con el ID especificado
         callback(null, null);
       } else {
-        // Si se encuentra un usuario, devuelve sus datos
+        //Si se encuentra un usuario, devuelve sus datos
         const usuario = result[0]; // Suponiendo que el resultado es un solo usuario
         callback(null, usuario);
       }

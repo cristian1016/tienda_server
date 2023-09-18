@@ -29,7 +29,7 @@ db.connect((err) => {
 
 // Función para enviar un correo electrónico al usuario
 const enviarCorreo = (user_id) => {
-  // Consulta la dirección de correo electrónico del usuario en la base de datos
+  // Consulta
   const query = 'SELECT email FROM users WHERE id_user = ?';
 
   db.query(query, [user_id], (err, results) => {
@@ -39,7 +39,7 @@ const enviarCorreo = (user_id) => {
     } else if (results.length === 0) {
       console.error('Usuario no encontrado en la base de datos');
     } else {
-      // Obtiene la dirección de correo electrónico del resultado de la consulta
+
       const email_user = results[0].email;
 
       // Configura las opciones para el correo electrónico
