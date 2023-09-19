@@ -50,9 +50,9 @@ const comprarProducto = (req, res) => {
 
   UserRepository.comprarProducto(user_id, product_id, cantidad, () => {
     const asuntoCorreo = 'Compra realizada';
-    const contenidoCorreo = 'Gracias por tu compra. Detalles de la compra: ...';
+    const contenidoCorreo = 'Gracias por comprar en mercado campesino col';
 
-    // sendMail.enviarCorreo(usuarioId, asuntoCorreo, contenidoCorreo);
+    // sendMail.enviarCorreo(user_id, asuntoCorreo, contenidoCorreo);
 
     res.status(200).json({ message: "Compra realizada con éxito" });
   });

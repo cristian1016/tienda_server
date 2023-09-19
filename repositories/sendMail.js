@@ -1,5 +1,7 @@
+// import comprarProducto  from './userRepository';
 const nodemailer = require('nodemailer');
 const mysql = require('mysql2');
+
 
 // Configuración del transportador de correo electrónico
 const transporter = nodemailer.createTransport({
@@ -28,8 +30,8 @@ db.connect((err) => {
 });
 
 // Función para enviar un correo electrónico al usuario
-const enviarCorreo = (user_id) => {
-  // Consulta
+const enviarCorreo = (user_id, asuntoCorreo, contenidoCorreo) => {
+
   const query = 'SELECT email FROM users WHERE id_user = ?';
 
   db.query(query, [user_id], (err, results) => {
@@ -46,8 +48,8 @@ const enviarCorreo = (user_id) => {
       const opcionesCorreo = {
         from: 'mercadocampesinocol@gmail.com',
         to: email_user,
-        subject: 'Asunto del correo',
-        html: '<p>Gracias por tu compra</p>',
+        subject: asuntoCorreo,
+        html: contenidoCorreo,
       };
 
       // Envía el correo electrónico utilizando el transportador

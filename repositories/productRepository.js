@@ -71,14 +71,13 @@ class ProductRepository {
 
   //Método para actualizar un producto en la base de datos
   static updateProduct(product, callback) {
-    // Realiza una consulta SQL para actualizar el nombre y precio de un producto con el ID proporcionado
+    //Realiza una consulta SQL para actualizar el nombre y precio de un producto con el ID proporcionado
     connection.query(
       "UPDATE products SET name_pro = ?, descripcion = ?, precio = ? WHERE id_pro = ?",
       [product.name_pro, product.descripcion, product.precio, product.id_pro],
       (error) => {
         if (error) throw error;
 
-        //Llama a la función de devolución de llamada cuando la actualización se completa con éxito
         callback();
       }
     );
@@ -90,7 +89,6 @@ class ProductRepository {
     connection.query("DELETE FROM products WHERE id_pro = ?", [id_pro], (error) => {
       if (error) throw error;
 
-      //Llama a la función de devolución de llamada cuando la eliminación se completa con éxito
       callback();
     });
   }
